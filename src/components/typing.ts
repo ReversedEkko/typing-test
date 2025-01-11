@@ -5,7 +5,12 @@ import { generate } from "random-words";
  * @param count - Number of words to generate.
  */
 export function newGame(count: number): void {
-    const wordElement = document.getElementById('words');
+    if (typeof document === "undefined") {
+        console.warn("newGame function called outside of a browser environment.");
+        return;
+    }
+
+    const wordElement = document.getElementById("words");
     if (wordElement) {
         wordElement.innerHTML = ""; // clear existing content
         wordElement.innerHTML += randomWord(count); // append new content
