@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Time from '../components/time.svelte';
+	import Count from '../components/count.svelte';
+	import Custom from '../components/custom.svelte';
 
 	// 0 = time, 1 = word count, 2 = custom
 	let mode = "time";
@@ -47,12 +49,12 @@
 		{#if mode == "time"}
 			<Time/>
 		{:else if mode == "count"}
-			meow
+			<Count/>
 		{:else if mode == "custom"}
-			dick
+			<Custom/>
 		{/if}
 		<div id="words"></div>
-		<div id="cursor"></div>
+			<div id="cursor"></div>
 	</div>
 </div>
 
