@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Time from '../components/time.svelte';
+	import Count from '../components/count.svelte';
+	import Custom from '../components/custom.svelte';
 
 	// 0 = time, 1 = word count, 2 = custom
 	let mode = "time";
@@ -28,8 +30,8 @@
 	}
 </script>
 
-<div class="flex items-center card w-5/6 h-16">
-	<ul class="font-mono text-3xl w-2/3 overflow-hidden ml-6 flex gap-4">
+<div class="flex items-center card w-5/6">
+	<ul class="font-mono text-3xl w-2/3 overflow-hidden ml-6 flex gap-4 h-14 m-4">
 		<button class="card w-full" on:click={() => handleClick(0)}>
 			Time
 		</button>
@@ -47,9 +49,9 @@
 		{#if mode == "time"}
 			<Time/>
 		{:else if mode == "count"}
-			meow
+			<Count/>
 		{:else if mode == "custom"}
-			dick
+			<Custom/>
 		{/if}
 		<div id="words"></div>
 		<div id="cursor"></div>

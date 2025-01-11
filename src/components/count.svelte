@@ -1,5 +1,5 @@
 <script>
 	import { newGame } from './typing';
 
-	newGame(1000);
+	newGame(4);
 </script>
